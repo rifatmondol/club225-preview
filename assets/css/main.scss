@@ -1,0 +1,457 @@
+@import "./variables.scss";
+
+@mixin label-value{
+    margin-bottom: 7px;
+    display: block;
+}
+@mixin input-value{
+    height: 35px;
+    line-height: 35px;
+    padding: 10px;
+    border: 1px solid $black;
+    background: $bg-off-white;
+    &:focus-visible{
+        outline: none;
+    }
+}
+@mixin a-value{
+    display: block;
+    text-decoration: none;
+    height: 35px;
+    line-height: 35px;
+}
+@mixin bg-color{
+    background-color: $black;
+    color: $white;
+}
+@mixin a-decoration{
+    text-decoration: none;
+    display: block;
+}
+@mixin position{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    background-color: $bg-off-white;
+}
+img{
+    vertical-align: middle;
+}
+.text-center{
+    text-align: center;
+}
+.w-100{
+    width: 100%;
+}
+.w-33{
+    width: 33.33%;
+}
+h2{
+    font-size: 32px;
+    span{
+        font-size: 36px;
+    }
+}
+p{
+    font-weight: 400;
+}
+ul{
+    li{
+        list-style: none;
+        a{
+            text-decoration: none;
+            font-weight: 700;
+            color: $black;
+        }
+    }
+}
+
+.order-1{
+    order: 1;
+}
+.order-2{
+    order: 2;
+}
+
+/* Header css */
+header{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background-color: $white;
+    .nav{
+        height: 64px;
+        padding: 0px 55px;
+        display: flex;
+        align-items: center;
+        ul{
+            li{
+                display: inline-block;
+                a{
+                    padding:0px 15px;
+                }
+            }
+        }
+        .nav-right{
+            text-align: right;
+            ul li a{
+                padding: 0px 10px;
+            }
+        }
+    }
+}
+
+
+/* Banner css */
+.banner{
+    background-image: url(../images/banner.png);
+    background-repeat: no-repeat;
+    height: 983px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    .banner-text{
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $white;
+        p{
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        a{
+            @include bg-color;
+            display: inline-block;
+            width: 180px;
+            height: 50px;
+            line-height: 50px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    }
+}
+
+
+/* About css */
+.about-section{
+    background-color: #F5EDE0;
+    padding: 285px 120px;
+    .about-row{
+        display: flex;
+        .about-left{
+            width: 65%;
+            h2{
+                margin-bottom: 20px;
+            }
+        }
+        .about-right{
+            padding-left: 50px;
+            width: 35%;
+        }
+        &:last-child{
+            margin-top: 150px;
+            .about-left{
+                padding-left: 20px;
+                h2{
+                    text-align: right;
+                }
+            }
+            .about-right{
+                padding-left: 0;
+                padding-right: 50px;
+            }
+        }
+    }
+}
+
+
+/* Contact css */
+#contact{
+    .contact-section{
+        padding: 115px 0px;
+        max-width: 800px;
+        margin: 0 auto;
+        .contact-main{
+            margin-top: 60px;
+            display: flex;
+            .form-section{
+                width: 53%;
+                form{
+                    label{
+                        @include label-value;
+                    }
+                    .input-box{
+                        margin-bottom: 25px;
+                        input{
+                            @include input-value;
+                            
+                        }
+                        textarea{
+                            height: 160px;
+                            padding: 10px;
+                            resize: none;
+                            border: 1px solid $black;
+                            background: $bg-off-white;
+                            &:focus-visible{
+                                outline: none;
+                            }
+                        }
+                    }
+                    a{
+                        @include bg-color;
+                        @include a-value;
+                    }
+                }
+            }
+            .details{
+                width: 47%;
+                padding-left: 150px;
+                ul li{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+/* Login css */
+.login{
+    max-width: 400px;
+    height: 860px;
+    margin: 0 auto;
+    position: relative;
+    form{
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        label{
+            @include label-value;
+        }
+        .input-box{
+            &:first-child{
+                margin-bottom: 25px;
+            }
+            input{
+                @include input-value;
+            }
+        }
+        a.forget{
+            @include a-decoration;
+            color: $black;
+            font-weight: 400;
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+        a.sign-in{
+            @include bg-color;
+            @include a-value;
+        }
+    }
+}
+
+
+
+/* Shop css */
+.shop{
+    padding: 92px 100px 80px;
+    .header-shop{
+        p{
+            font-size: 20px;
+        }
+    }
+    .shop-main{
+        margin-top: 70px;
+        display: flex;
+        .filter-shop{
+            width: 17%;
+            p{
+                font-weight: 700;
+                margin-bottom: 40px;
+                position: relative;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    height: 2px;
+                    width: 130px;
+                    background-color: $black;
+                    bottom: -10px;
+                    left: 0;
+                }
+            }
+            ul li {
+                margin-bottom: 15px;
+                a{
+                    font-weight: 400;
+                    transition: 0.3s;
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+        .product-list{
+            padding: 0px 100px;
+            width: 83%;
+            .product-outer{
+                .product-row{
+                    display: flex;
+                    &:first-child{
+                        margin-bottom: 40px;
+                    }
+                    .product-item-inner{
+                        width: 33.33%;
+                        padding: 0px 20px;
+                        a{
+                            @include a-decoration;
+                            color: $black;
+                            img{
+                                width: 100%;
+                                
+                                margin-bottom: 10px;
+                            }
+                            p{
+                                font-weight: 700;
+                                span{
+                                    display: block;
+                                    font-weight: 400;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .pagination{
+        padding-right: 120px;
+        padding-top: 150px;
+        text-align: right;
+        ul li{
+            display: inline-block;
+            margin-right: 7px;
+            &:last-child{
+                margin-right: 0;
+            }
+            a{
+                display: block;
+                border: 1px solid $black;
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                transition: 0.3s;
+                &:hover{
+                    @include bg-color;
+                }
+            }
+            a.active{
+                @include bg-color;
+            }
+        }
+    }
+}
+
+
+
+/* Cart css */
+.cart{
+    display: flex;
+    height: 1047px;
+    .cart-left{
+        width: 50%;
+        text-align: center;
+        position: relative;
+        img{
+            position: absolute;
+            @include position;
+            max-width: 380px;
+        }
+    }
+    .cart-right{
+        background-color: $white;
+        width: 50%;
+        position: relative;
+        .cart-description{
+            position: absolute;
+            @include position;
+            width: 446px;
+            .title{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                p{
+                    font-weight: 700;
+                }
+                span{
+                    font-weight: 400;
+                }
+            }
+            .subtitle{
+                margin-bottom: 15px;
+            }
+            .size{
+                ul{
+                    li{
+                        display: inline-block;
+                        margin-right: 7px;
+                        height: 65px;
+                        width: 65px;
+                        line-height: 65px;
+                        text-align: center;
+                        border: 1px solid #A0A0A0;
+                        transition: 0.3s;
+                        cursor: pointer;
+                        &:hover{
+                            border: 1px solid $black;
+                        }
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                    }
+                    li.active{
+                        border: 1px solid $black;
+                    }
+                }
+            }
+            a.add-cart{
+                @include bg-color;
+                @include a-decoration;
+                margin-top: 15px;
+                height: 52px;
+                line-height: 52px;
+                transition: 0.3s;
+                border: 1px solid $black;
+                &:hover{
+                    color: $black;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}
+
+
+/* Footer css */
+footer{
+    height: 72px;
+    line-height: 72px;
+    p{
+        border-top: 1px solid #2C2C2C;
+        background: #151515;
+        font-weight: 700;
+        color: #A8A8A8;
+    }
+}
