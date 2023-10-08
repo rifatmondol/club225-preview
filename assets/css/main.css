@@ -60,6 +60,9 @@ header {
       text-align: right; }
       header .nav .nav-right ul li a {
         padding: 0px 10px; }
+  header .responsive-menu,
+  header .menu-bar {
+    display: none; }
 
 /* Banner css */
 .banner {
