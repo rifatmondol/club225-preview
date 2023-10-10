@@ -150,7 +150,7 @@ header{
 
 /* About css */
 .about-section{
-    background-color: #F5EDE0;
+    background-color: $bg-yellow;
     padding: 285px 120px;
     .about-row{
         display: flex;
@@ -449,13 +449,10 @@ header{
 
 
 /* Footer css */
-footer{
-    height: 72px;
-    line-height: 72px;
-    p{
-        border-top: 1px solid #2C2C2C;
-        background: #151515;
-        font-weight: 700;
-        color: #A8A8A8;
-    }
+footer p{
+    border-top: 1px solid #2C2C2C;
+    background: $dark-gray;
+    font-weight: 700;
+    color: $light-gray;
+    padding: 36px 0px;
 }

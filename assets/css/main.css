@@ -338,13 +338,9 @@ header {
           background-color: #ffffff; }
 
 /* Footer css */
-footer {
-  height: 72px;
-  line-height: 72px; }
-  footer p {
-    border-top: 1px solid #2C2C2C;
-    background: #151515;
-    font-weight: 700;
-    color: #A8A8A8; }
-
-/*# sourceMappingURL=main.css.map */
+footer p {
+  border-top: 1px solid #2C2C2C;
+  background: #151515;
+  font-weight: 700;
+  color: #A8A8A8;
+  padding: 36px 0px; }

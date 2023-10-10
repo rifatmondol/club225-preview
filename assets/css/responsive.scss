@@ -1,0 +1,659 @@
+@import './variables.scss';
+
+@mixin position-2{
+    position: relative;
+    top: inherit;
+    left: inherit;
+    transform: inherit;
+    width: 220px;
+}
+@mixin responsive-menu{
+    position: absolute;
+    background: $white;
+    width: 100%;
+    max-width: 400px;
+    right: -100%;
+    transition: 0.3s;
+    padding-top: 70px;
+    top: 0;
+    height: 100vh;
+    box-shadow: 0px 0px 15px -10px $black;
+}
+
+
+@media only screen and (max-width:1199px){
+    header{
+        .nav {
+            padding: 0px 20px;
+            ul li a, .nav-right ul li a{
+                padding: 0px 10px;
+            }
+        }
+    } 
+
+    /* Banner css */
+    .banner{
+        height: 800px;
+        .banner-text{
+            width: 100%;
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    /* About css */
+    .about-section {
+        padding: 150px 50px;
+        .about-row{
+            .about-left{
+                width: 65%;
+            }
+            .about-right{
+                width: 35%;
+            }
+        }
+    }
+
+    /* Contact css */
+    #contact {
+        .contact-section {
+            padding: 115px 50px;
+            .contact-main {
+                .details {
+                    padding-left: 90px;
+                }
+            }
+        }
+    }
+
+    /* Shop css */
+    .shop {
+        padding: 90px 50px 60px;
+        .shop-main{
+            .filter-shop {
+                width: 25%;
+            }
+            .product-list {
+                padding: 0px;
+                width: 75%;
+            }
+        }
+        .pagination {
+            padding-right: 20px;
+        }
+    }
+
+    /* Login css */
+    .login {
+        height: 600px;
+    }
+    .cart {
+        height: 850px;
+    }
+}
+
+
+@media only screen and (max-width:991px){
+    h2 {
+        font-size: 25px;
+        span{
+            font-size: 29px;
+        }
+    }
+
+    header{
+        .nav {
+            padding: 0px 20px;
+            .nav-left.w-33,
+            .nav-right.w-33{
+                width: 40%;
+                ul li a{
+                    padding: 0px 5px;
+                }
+            }
+            .logo.w-33{
+                width: 20%;
+            }
+        }
+    } 
+    
+
+   
+
+    /* Banner css */
+    .banner{
+        height: 700px;
+        .banner-text{
+            width: 100%;
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    /* About css */
+    .about-section {
+        padding: 150px 50px;
+        .about-row{
+            .about-left,
+            .about-right{
+                width: 50%;
+            }
+        }
+    }
+
+    /* Contact css */
+    #contact {
+        .contact-section {
+            padding: 115px 50px;
+            .contact-main {
+                .details {
+                    padding-left: 90px;
+                }
+            }
+        }
+    }
+
+    /* Shop css */
+    .shop {
+        padding: 90px 50px 60px;
+        .shop-main{
+            .filter-shop {
+                width: 25%;
+            }
+            .product-list {
+                padding: 0px;
+                width: 75%;
+            }
+        }
+        .pagination {
+            padding-right: 20px;
+        }
+    }
+
+
+    /* Login css */
+    .login {
+        height: 600px;
+    }
+
+    
+    /* Cart css */
+    .cart {
+        padding-bottom: 50px;
+        display: block;
+        height: auto;
+        background: $white;
+        .cart-left{
+            padding-top: 60px;
+            background: $bg-off-white;
+            width: 100%;
+            img{
+                @include position-2;
+            }
+        }
+        .cart-right{
+            width: 100%;
+            .cart-description {
+                @include position-2;
+                padding: 40px 20px;
+                width: 100%;
+                .size ul li {
+                    height: 60px;
+                    width: 60px;
+                    line-height: 60px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media only screen and (max-width:767px){
+    h2 {
+        font-size: 30px;
+        span {
+            font-size: 34px;
+        }
+    }
+
+    header{
+        padding: 15px 0px;
+        overflow-x: clip;
+        .nav {
+            height: auto;
+            padding: 0px 20px;
+            display: block;
+            ul li {
+                 display: block;
+            }
+            .logo.w-33{
+                text-align: left;
+            }
+            .nav-left, 
+            .nav-right{
+                display: none;
+            }
+        }
+        .responsive-menu,
+        .menu-bar{
+            display: block;
+            padding: 0px 20px;
+        }
+        .responsive-menu {
+            @include responsive-menu;
+            ul li {
+                &:last-child a{
+                    border-bottom: none;
+                }
+                a {
+                    display: block;
+                    padding: 10px 0px;
+                    border-bottom: 1px solid $gray;
+                }
+            }
+        }
+        .menu-bar {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            i {
+                font-size: 30px;
+                cursor: pointer;
+            }
+            .close{
+                display: none;
+            }
+            .open.active{
+                display: none;
+            }
+            .close.active{
+                display: block;
+            }
+        }
+        .responsive-menu.active{
+            right: 0%;
+        }
+    }
+
+
+    /* Banner */
+    .banner {
+        height: 700px;
+        .banner-text{
+            width: 100%;
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+
+    /* About css */
+    .about-section {
+        padding: 110px 20px;
+        .about-row {
+            &:last-child {
+                margin-top: 100px;
+                .about-left h2{
+                    text-align: left;
+                }
+                .about-right{
+                    padding-right: 0;
+                }
+            }
+            .about-left {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+
+    /* 
+    ===================================
+                Group CSS              
+    ===================================
+    */
+    .about-section .about-row, 
+    #contact .contact-section .contact-main {
+        display: block;
+    }
+    header .nav .nav-left.w-33,
+    header .nav .logo.w-33,
+    header .nav .nav-right.w-33,
+    .about-section .about-row .about-left,
+    .about-section .about-row .about-right,
+    #contact .contact-section .contact-main .form-section,
+    #contact .contact-section .contact-main .details {
+        width: 100%!important;
+    }
+
+    .about-section .about-row:last-child .about-left,
+    .about-section .about-row .about-right,
+    #contact .contact-section .contact-main .details{
+        padding-left: 0;
+    }
+    /* 
+    ===================================
+                Group CSS End             
+    ===================================
+    */
+
+
+    /* Contact css */
+    #contact .contact-section {
+        padding: 115px 20px;
+        width: 70%;
+        .contact-main .details{
+            margin-top: 50px;
+        }
+    }
+
+    /* Login css */
+    .login {
+        height: 600px;
+        form {
+            padding: 0px 20px;
+        }
+    }
+
+
+    /* Cart css */
+    .cart {
+        padding-bottom: 50px;
+        display: block;
+        height: auto;
+        background: $white;
+        .cart-left{
+            width: 100%;
+            padding-top: 60px;
+            background: $bg-off-white;
+            img{
+                @include position-2;
+            }
+        }
+        .cart-right {
+            width: 100%;
+            .cart-description{
+                @include position-2;
+                padding: 40px 20px;
+                width: 100%;
+                .size ul li {
+                    height: 60px;
+                    width: 60px;
+                    line-height: 60px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    /* Shop css */
+    .shop {
+        padding: 90px 20px 70px;
+        .shop-main {
+            margin-top: 70px;
+            display: block;
+            .filter-shop {
+                width: 100%;
+                ul li {
+                    display: inline-block;
+                    margin-right: 10px;
+                    padding-right: 10px;
+                    border-right: 1px solid $black;
+                    &:last-child{
+                        border-right: none;
+                    }
+                }
+            }
+            .product-list {
+                padding: 0px;
+                width: 100%;
+                padding-top: 70px;
+                .product-outer .product-row .product-item-inner {
+                    width: 50%;
+                }
+            }
+        }
+        .pagination {
+            padding: 0px 20px;
+            padding-top: 100px;
+            text-align: center;
+        }
+    }
+   
+}
+
+
+@media only screen and (max-width:575px){
+    h2 {
+        font-size: 22px;
+        span {
+            font-size: 26px;
+        }
+    }
+    header{
+        padding: 15px 0px;
+        overflow-x: clip;
+        .nav {
+            height: auto;
+            padding: 0px 20px;
+            display: block;
+            ul li {
+                display: block;
+            }
+            .logo.w-33{
+                text-align: left;
+            }
+            .nav-left, 
+            .nav-right{
+                display: none;
+            }
+        }
+        .responsive-menu,
+        .menu-bar{
+            display: block;
+            padding: 0px 20px;
+        }
+        .responsive-menu {
+            @include responsive-menu;
+            ul li{
+                &:last-child a{
+                    border-bottom: none;
+                }
+                a {
+                    display: block;
+                    padding: 10px 0px;
+                    border-bottom: 1px solid $gray;
+                }
+            } 
+        }
+        .responsive-menu.active{
+            right: 0%;
+        }
+        .menu-bar {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            i {
+                font-size: 30px;
+                cursor: pointer;
+            }
+            .close{
+                display: none;
+            }
+            .close.active{
+                display: block;
+            }
+            .open.active{
+                display: none;
+            }
+        }
+    }
+
+
+    /* Banner */
+    .banner {
+        height: 550px;
+        .banner-text{
+            width: 100%;
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+
+
+    /* About css */
+    .about-section {
+        padding: 110px 20px;
+        .about-row {
+            &:last-child {
+                margin-top: 100px;
+                .about-left h2{
+                    text-align: left;
+                }
+                .about-right{
+                    padding-right: 0;
+                }
+            }
+            .about-left {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+
+    /* 
+    ===================================
+                Group CSS              
+    ===================================
+    */
+    .about-section .about-row, 
+    #contact .contact-section .contact-main {
+        display: block;
+    }
+    header .nav .nav-left.w-33,
+    header .nav .logo.w-33,
+    header .nav .nav-right.w-33,
+    .about-section .about-row .about-left,
+    .about-section .about-row .about-right,
+    #contact .contact-section .contact-main .form-section,
+    #contact .contact-section .contact-main .details {
+        width: 100%!important;
+    }
+
+    .about-section .about-row:last-child .about-left,
+    .about-section .about-row .about-right,
+    #contact .contact-section .contact-main .details{
+        padding-left: 0;
+    }
+    /* 
+    ===================================
+                Group CSS End          
+    ===================================
+    */
+
+
+
+    /* Contact css */
+    #contact .contact-section {
+        padding: 115px 20px;
+        width: 100%;
+        .contact-main .details{
+            margin-top: 50px;
+        }
+    }
+
+    /* Login css */
+    .login {
+        height: 600px;
+        form {
+            padding: 0px 20px;
+        }
+    }
+
+
+    /* Cart css */
+    .cart {
+        padding-bottom: 50px;
+        display: block;
+        height: auto;
+        background: $white;
+        .cart-left{
+            padding-top: 60px;
+            background: $bg-off-white;
+            width: 100%;
+            img{
+                @include position-2;
+                width: 200px!important;
+            }
+        }
+        .cart-right {
+            width: 100%;
+            .cart-description{
+                @include position-2;
+                padding: 40px 20px;
+                width: 100%!important;
+                .size ul li {
+                    height: 40px;
+                    width: 40px;
+                    line-height: 40px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+
+    /* Shop css */
+    .shop {
+        padding: 90px 20px 70px;
+        .shop-main {
+            margin-top: 70px;
+            display: block;
+            .filter-shop {
+                width: 100%;
+                ul li {
+                    display: inline-block;
+                    margin-right: 10px;
+                    padding-right: 10px;
+                    border-right: 1px solid $black;
+                    &:last-child{
+                        border-right: none;
+                    }
+                }
+            }
+            .product-list {
+                padding: 0px 20px;
+                width: 100%;
+                padding-top: 70px;
+                .product-outer .product-row {
+                    display: block;
+                    .product-item-inner {
+                        width: 100%;
+                        padding: 0;
+                        margin-bottom: 40px;
+                    }
+                }
+            }
+        }
+        .pagination {
+            padding: 0px 20px;
+            padding-top: 60px;
+            text-align: center;
+        }
+    }
+
+    /* Footer css*/
+    footer p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+}
